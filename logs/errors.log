@@ -1,0 +1,7 @@
+{"level":"error","message":"err.message","timestamp":"2024-07-01T13:20:38.749Z"}
+{"level":"error","message":"No token,authorization denied","timestamp":"2024-07-01T13:24:38.653Z"}
+{"code":11000,"errorResponse":{"code":11000,"errmsg":"E11000 duplicate key error collection: healthcare-management.users index: username_1 dup key: { username: \"rock\" }","index":0,"keyPattern":{"username":1},"keyValue":{"username":"rock"}},"index":0,"keyPattern":{"username":1},"keyValue":{"username":"rock"},"level":"error","timestamp":"2024-07-01T13:25:55.009Z"}
+{"level":"error","timestamp":"2024-07-01T13:34:01.185Z"}
+{"level":"error","timestamp":"2024-07-01T13:34:19.292Z"}
+{"_message":"MedicalRecord validation failed","errors":{"fileData":{"kind":"string","message":"Cast to string failed for value \"[]\" (type Array) at path \"fileData\"","name":"CastError","path":"fileData","reason":null,"stringValue":"\"[]\"","value":[],"valueType":"Array"}},"level":"error","message":"MedicalRecord validation failed: fileData: Cast to string failed for value \"[]\" (type Array) at path \"fileData\"","name":"ValidationError","timestamp":"2024-07-01T13:35:36.723Z"}
+{"code":11000,"errorResponse":{"code":11000,"errmsg":"E11000 duplicate key error collection: healthcare-management.users index: username_1 dup key: { username: \"rocky\" }","index":0,"keyPattern":{"username":1},"keyValue":{"username":"rocky"}},"index":0,"keyPattern":{"username":1},"keyValue":{"username":"rocky"},"level":"error","timestamp":"2024-07-01T13:45:19.800Z"}

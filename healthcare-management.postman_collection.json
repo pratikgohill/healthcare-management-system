@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "68f49578-483d-4ce2-ad6f-69951bf7cb57",
+		"name": "healthcare-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21624985"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"username\": \"john\",\r\n//     \"email\": \"john@xyz.com\",\r\n//     \"password\": \"john123\",\r\n//     \"role\": \"Doctor\"\r\n// }\r\n// {\r\n//     \"username\": \"admin\",\r\n//     \"email\": \"admin@xyz.com\",\r\n//     \"password\": \"admin\",\r\n//     \"role\": \"Admin\"\r\n// }\r\n{\r\n    \"username\": \"rock\",\r\n    \"email\": \"rock@xyz.com\",\r\n    \"password\": \"rock123\",\r\n    \"role\": \"Doctor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login (getToken)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"email\":\"admin@xyz.com\",\r\n//     \"password\":\"admin\"\r\n// }\r\n// {\r\n//     \"email\":\"john@xyz.com\",\r\n//     \"password\":\"john123\"\r\n// }\r\n{\r\n    \"email\": \"rock@xyz.com\",\r\n    \"password\": \"rock123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzMzOTYsImV4cCI6MTcxOTkxOTc5Nn0.pSpGkY3oTDOMvrbKzNzq8NuV_tiLHx1n6J034l1dgT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patients",
+			"item": [
+				{
+					"name": "addPatient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzMzOTYsImV4cCI6MTcxOTkxOTc5Nn0.pSpGkY3oTDOMvrbKzNzq8NuV_tiLHx1n6J034l1dgT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"jessi\",\r\n    \"lastName\": \"one-gen\",\r\n    \"dob\": \"2002-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPatients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzMzOTYsImV4cCI6MTcxOTkxOTc5Nn0.pSpGkY3oTDOMvrbKzNzq8NuV_tiLHx1n6J034l1dgT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzMzOTYsImV4cCI6MTcxOTkxOTc5Nn0.pSpGkY3oTDOMvrbKzNzq8NuV_tiLHx1n6J034l1dgT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/patient/668294367b665233b6d3df1a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"patient",
+								"668294367b665233b6d3df1a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzMzOTYsImV4cCI6MTcxOTkxOTc5Nn0.pSpGkY3oTDOMvrbKzNzq8NuV_tiLHx1n6J034l1dgT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"firstName\": \"patient1-one\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/patient/668294367b665233b6d3df1a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"patient",
+								"668294367b665233b6d3df1a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detelePatient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI4ZWY2OTMwNmFiOWFhNmRmNTQwMCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcxOTgzNDA4OCwiZXhwIjoxNzE5OTIwNDg4fQ.zSyta9VS3M2boSbsEcI5ibbPGZJgt5yCUpFLco7WPYU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/patient/6682954c7b665233b6d3df20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"patient",
+								"6682954c7b665233b6d3df20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "medicalRecords",
+			"item": [
+				{
+					"name": "addMedicalRecord",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzQyNTAsImV4cCI6MTcxOTkyMDY1MH0.ptGaen-5KfjM0pX42DJeSoz9xzf_dvkRrCKsySujJNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/prati/Downloads/SampleCSVFile_2kb.csv"
+								},
+								{
+									"key": "description",
+									"value": "csv file extraction",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/medicalData/668294367b665233b6d3df1a/medical-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicalData",
+								"668294367b665233b6d3df1a",
+								"medical-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMedicalRecords",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzQyNTAsImV4cCI6MTcxOTkyMDY1MH0.ptGaen-5KfjM0pX42DJeSoz9xzf_dvkRrCKsySujJNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/medicalData/668294367b665233b6d3df1a/medical-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicalData",
+								"668294367b665233b6d3df1a",
+								"medical-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMedicalRecordById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzQyNTAsImV4cCI6MTcxOTkyMDY1MH0.ptGaen-5KfjM0pX42DJeSoz9xzf_dvkRrCKsySujJNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/medicalData/668294367b665233b6d3df1a/medical-data/66829da26cd7b18f592bc264",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicalData",
+								"668294367b665233b6d3df1a",
+								"medical-data",
+								"66829da26cd7b18f592bc264"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRecord",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI5MjI3MzZmYjhlMDNlODk5Y2M5NyIsInJvbGUiOiJEb2N0b3IiLCJpYXQiOjE3MTk4MzQyNTAsImV4cCI6MTcxOTkyMDY1MH0.ptGaen-5KfjM0pX42DJeSoz9xzf_dvkRrCKsySujJNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/medicalData/668294367b665233b6d3df1a/medical-data/66829e726cd7b18f592bc26c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicalData",
+								"668294367b665233b6d3df1a",
+								"medical-data",
+								"66829e726cd7b18f592bc26c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "fetchLogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI4ZWY2OTMwNmFiOWFhNmRmNTQwMCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcxOTgzNjk1MCwiZXhwIjoxNzE5OTIzMzUwfQ.ioCwlp4PLm0fJtufeRqn1FtMuh8HQoP0BvF7pJ4R4v0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchErrors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODI4ZWY2OTMwNmFiOWFhNmRmNTQwMCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcxOTgzNjk1MCwiZXhwIjoxNzE5OTIzMzUwfQ.ioCwlp4PLm0fJtufeRqn1FtMuh8HQoP0BvF7pJ4R4v0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/logs/errors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs",
+								"errors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
